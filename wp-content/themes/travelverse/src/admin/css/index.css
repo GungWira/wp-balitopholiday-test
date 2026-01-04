@@ -1,0 +1,1289 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #2377FC;
+  --font-color: #404968;
+  --heading-color: #2b2636;
+  --border-color: #4049681A;
+  --primary-accent: #FBF1EC;
+  --primary-accent-2: #2377FC14; 
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  @apply text-heading-color;
+}
+
+#travelverse-dashboard {
+  @apply bg-[#F6F5F3] -ml-5 text-font-color min-h-screen text-base leading-[1.5];
+}
+
+/* button primary */
+
+.btn-primary {
+  @apply px-5 py-2.5 bg-primary-color rounded-md transition-all text-white border border-primary-color font-semibold text-base inline-block hover:bg-transparent hover:text-primary-color hover:cursor-pointer;
+}
+
+/* button secondary */
+
+.btn-secondary {
+  @apply px-6 py-3 bg-white rounded transition-all duration-300 text-primary-color border border-white font-semibold text-sm inline-block hover:bg-transparent hover:text-white hover:cursor-pointer;
+}
+
+/* button preview */
+
+/* bg color */
+.gradient-background {
+  background: linear-gradient(268.83deg, #2377FC 26.16%, #0804C5 99.85%);
+  ;
+}
+
+/* gap */
+.gap-two {
+  gap: 234px;
+}
+
+/* box-shadow */
+.box-shadow {
+  @apply shadow-[0px_4px_4px_0px_rgba(0,18,64,0.04)];
+}
+
+.box-shadow-one {
+  @apply shadow-[0px_4px_12px_0px_rgba(29,13,13,0.04)];
+}
+
+/* tooltip */
+.tooltip.left {
+  @apply left-[-25%];
+}
+
+.tooltip.left::before {
+  @apply left-3;
+}
+
+.tooltip.center {
+  @apply -translate-x-2/4 left-2/4;
+}
+
+.tooltip.center::before {
+  @apply left-2/4;
+}
+
+/* nav menu border */
+.nav-border {
+  @apply after:content-[''] after:w-full after:h-1 after:bg-slate-600 after:absolute after:bg-primary-color after:rounded-t after:top-12 after:left-0;
+}
+
+@keyframes travelverse_FadeIn {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.travelverse_FadeIn {
+  animation: travelverse_FadeIn 0.5s ease;
+}
+
+.travelverse-ad_icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #e0e9ec;
+  background-color: rgba(0, 0, 0, 0);
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(33, 24, 21, 0.8);
+  font-size: 20px;
+}
+
+.travelverse-ad_icon-link {
+  display: inline-block;
+  margin: 6px;
+  position: relative;
+}
+
+.travelverse-ad_icon-link:hover .travelverse-ad_icon-wrap {
+  color: #d86b91;
+  border-color: #d86b91;
+  background-color: rgba(216, 107, 145, 0.05);
+  cursor: pointer;
+}
+
+.travelverse-ad_icon-link:hover .travelverse-ad_tooltip {
+  visibility: visible;
+  opacity: 1;
+  top: 125%;
+}
+
+.travelverse-ad_icon-link-group {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: -6px;
+}
+
+.travelverse-ad_tooltip {
+  position: absolute;
+  font-size: 12px;
+  line-height: 1.33;
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 2px;
+  background-color: #011f27;
+  color: #fff;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  visibility: hidden;
+  opacity: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.travelverse-ad_tooltip[data-placement="bottom"]::before {
+  content: "";
+  border: 10px solid rgba(0, 0, 0, 0);
+  border-bottom-color: #011f27;
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%);
+}
+
+.travelverse-ad_navbar {
+  border-bottom: 1px solid #e0e9ec;
+  margin: 0 0 48px;
+}
+
+.travelverse-ad_navbar-nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.travelverse-ad_navbar-link {
+  padding: 12px;
+  line-height: 1.77;
+  color: rgba(33, 24, 21, 0.8);
+  text-decoration: none;
+  display: block;
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@keyframes hoverAnimate {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.travelverse-ad_navbar-link::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: linear-gradient(132.01deg,
+      #d86b91 -21.67%,
+      #d86b91 -21.67%,
+      #d86b91 126.46%);
+  position: absolute;
+  left: auto;
+  right: 0;
+  bottom: 0;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation: hoverAnimate 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) alternate;
+}
+
+.travelverse-ad_navbar-link:focus {
+  box-shadow: none;
+}
+
+.travelverse-ad_navbar li {
+  margin: 0 16px;
+}
+
+.travelverse-ad_navbar li.current .travelverse-ad_navbar-link,
+.travelverse-ad_navbar li:hover .travelverse-ad_navbar-link {
+  color: #d86b91;
+}
+
+.travelverse-ad_navbar li.current .travelverse-ad_navbar-link::after,
+.travelverse-ad_navbar li:hover .travelverse-ad_navbar-link::after {
+  animation: hoverAnimate 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+
+.travelverse-ad_card {
+  margin: 0 0 30px;
+  overflow: hidden;
+}
+
+.travelverse-ad_card-thumbnail {
+  margin: 0 -24px;
+}
+
+.travelverse-ad_card-thumbnail img {
+  vertical-align: top;
+  width: 100%;
+  height: auto;
+}
+
+.travelverse-ad_card-body {
+  padding: var(--padding, 30px);
+}
+
+.travelverse-ad_card-body>*:not(.travelverse-ad_card-header):not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.travelverse-ad_card-header {
+  padding-block-end: var(--padding-bottom, 16px);
+  margin-block-end: var(--margin-bottom, 16px);
+}
+
+.travelverse-ad_card-header.flex {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.travelverse-ad_card-header.has-border-b {
+  border-bottom: 1px solid rgba(77, 77, 77, 0.1);
+}
+
+.travelverse-ad_card-header:is(.fw-500) .travelverse-ad_card-title {
+  font-weight: inherit;
+}
+
+.travelverse-ad_card-title {
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.travelverse-ad_card-title .travelverse-ad_icon {
+  margin-right: 8px;
+  font-size: 24px;
+}
+
+.travelverse-ad_card-title-h2 {
+  font-size: 34px;
+  line-height: 1.235;
+}
+
+.travelverse-ad_card-lg .travelverse-ad_card-body {
+  border-radius: 10px;
+}
+
+.travelverse-ad_card-lg .travelverse-ad_card-body>*:not(.travelverse-ad_card-header):not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.travelverse-ad_card-sm .travelverse-ad_card-body {
+  padding: 24px 0;
+}
+
+.travelverse-ad_card-header+.travelverse-ad_card-body,
+.travelverse-ad_card-thumbnail+.travelverse-ad_card-body {
+  padding-top: 16px;
+}
+
+@keyframes bgAnimate {
+  0% {
+    background-position: 100% 50%;
+  }
+
+  50% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.travelverse-ad_card.is-loading .travelverse-ad_card-header::before,
+.travelverse-ad_card.is-loading .travelverse-ad_card-header::after,
+.travelverse-ad_card.is-loading .travelverse-ad_card-body::before,
+.travelverse-ad_card.is-loading .travelverse-ad_card-body::after {
+  display: block;
+  width: 100%;
+  height: 2em;
+  background: linear-gradient(-90deg, #d8d8d8, #ffffff, #d8d8d8);
+  background-size: 400% 400%;
+  background-position: 100% 50%;
+  border-radius: 4px;
+  animation: bgAnimate 2s linear infinite;
+}
+
+.travelverse-ad_card.is-loading .travelverse-ad_card-header {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.travelverse-ad_card.is-loading .travelverse-ad_card-header::before {
+  content: "";
+  max-width: 20em;
+}
+
+.travelverse-ad_card.is-loading .travelverse-ad_card-header::after {
+  content: "";
+  max-width: 50%;
+  height: 1em;
+  margin-top: 1em;
+}
+
+.travelverse-ad_card.is-loading .travelverse-ad_card-body::before {
+  content: "";
+  height: 10em;
+}
+
+.travelverse-ad_card-body.flex {
+  flex-direction: column;
+}
+
+.travelverse-left-card {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.travelverse-left-card>*:not(:last-child) {
+  margin-bottom: clamp(32px, 5vw, 48px);
+}
+
+.travelverse-left-card>img {
+  filter: drop-shadow(0px 4px 12px rgba(29, 13, 13, 0.04));
+  border-radius: 10px;
+}
+
+.travelverse-left-card .travelverse-section-header h2 {
+  font-size: 34px;
+  line-height: 1.235;
+}
+
+.travelverse-left-card .travelverse-section-content>*:not(:last-child) {
+  margin-bottom: clamp(32px, 5vw, 48px);
+}
+
+.travelverse-left-card .travelverse-para-content {
+  max-width: 890px;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.travelverse-left-card p>a {
+  color: #d86b91;
+  text-decoration: none;
+}
+
+.travelverse-left-card p>a:hover {
+  text-decoration: underline;
+}
+
+.travelverse-ad_col {
+  padding-left: calc(var(--gap) / 2);
+  padding-right: calc(var(--gap) / 2);
+  padding-top: calc(var(--row-gap) / 2);
+  padding-bottom: calc(var(--row-gap) / 2);
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+
+@media (min-width: 576px) {
+  .travelverse-ad_col {
+    max-width: var(--width-sm);
+    flex: 0 0 var(--width-sm);
+  }
+}
+
+@media (min-width: 768px) {
+  .travelverse-ad_col {
+    max-width: var(--width-md);
+    flex: 0 0 var(--width-md);
+  }
+}
+
+@media (min-width: 992px) {
+  .travelverse-ad_col {
+    max-width: var(--width);
+    flex: 0 0 var(--width);
+  }
+}
+
+.travelverse-ad_row {
+  --gap: var(--c-gap, 48px);
+  --row-gap: var(--c-row-gap, 30px);
+  --width: 100%;
+  --width-md: 100%;
+  --width-sm: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--gap) / 2);
+  margin-right: calc(-1 * var(--gap) / 2);
+  margin-top: calc(-1 * var(--row-gap) / 2);
+  margin-bottom: calc(-1 * var(--row-gap) / 2);
+}
+
+.travelverse-ad_row-masonry {
+  --columns: 2;
+  --gap: 30px;
+  --row-gap: 30px;
+  columns: 1;
+  gap: 0;
+  margin-left: calc(-1 * var(--gap) / 2);
+  margin-right: calc(-1 * var(--gap) / 2);
+  margin-top: calc(-1 * var(--row-gap) / 2);
+  margin-bottom: calc(-1 * var(--row-gap) / 2);
+}
+
+@media (min-width: 576px) {
+  .travelverse-ad_row-masonry {
+    columns: var(--columns-sm);
+  }
+}
+
+@media (min-width: 768px) {
+  .travelverse-ad_row-masonry {
+    columns: var(--columns-md);
+  }
+}
+
+@media (min-width: 992px) {
+  .travelverse-ad_row-masonry {
+    columns: var(--columns);
+  }
+}
+
+.travelverse-ad_row-masonry .travelverse-ad_col {
+  max-width: 100%;
+  width: 100%;
+  display: inline-block;
+  transform: translateZ(-1px);
+}
+
+.travelverse-ad_btn {
+  padding: 16px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  text-decoration: none;
+  background-color: #efefef;
+  border: none;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0);
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.travelverse-ad_btn-group {
+  --gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(-1 * var(--gap) / 2);
+}
+
+.travelverse-ad_btn-group .travelverse-ad_btn {
+  margin: calc(var(--gap) / 2);
+}
+
+.travelverse-ad_btn-primary {
+  background: #d86b91;
+  border-color: #d86b91;
+  color: #fff;
+}
+
+.travelverse-ad_btn-primary:hover {
+  color: #d86b91;
+  background-color: #fff;
+}
+
+.travelverse-ad_btn-outline {
+  background: none;
+  border-color: #d86b91;
+  color: #d86b91;
+}
+
+.travelverse-ad_btn.color-scheme-gray {
+  border-color: #aeaeae;
+  color: #011f27;
+}
+
+.travelverse-ad_btn.btn-sm {
+  padding: 14px 30px;
+}
+
+.travelverse-ad_btn.actbtn.deactivate:hover {
+  background-color: #fff !important;
+  color: crimson;
+  border-color: crimson;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.travelverse-ad_modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  overflow: hidden;
+  overflow-y: auto;
+  width: 100%;
+  max-width: 560px;
+  max-height: 100vh;
+  z-index: 99999;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 1.625;
+  box-shadow: 0px 4px 12px rgba(0, 18, 15, 0.04);
+  animation: fadeIn 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.travelverse-ad_modal .travelverse-whats-new-content {
+  padding: 32px;
+}
+
+.travelverse-ad_modal p {
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0 0 1.5em;
+}
+
+.travelverse-ad_modal p:last-child {
+  margin-bottom: 0;
+}
+
+.travelverse-ad_modal * {
+  box-sizing: border-box;
+}
+
+.travelverse-ad_modal-header {
+  padding: 24px 32px;
+  border-bottom: 1px solid #e0e9ec;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 111;
+}
+
+.travelverse-ad_modal-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.travelverse-ad_modal-close {
+  position: absolute;
+  right: 32px;
+  top: 26px;
+  background: none;
+  border: none;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 111;
+}
+
+.travelverse-ad_modal-close:hover {
+  color: #fe7167;
+}
+
+.travelverse-ad_modal-body {
+  padding: 16px 32px 24px;
+  flex: 1;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #d6d6d6 #f5f5f5;
+}
+
+.travelverse-ad_modal-body::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  opacity: 0;
+}
+
+.travelverse-ad_modal-body::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.travelverse-ad_modal-body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.travelverse-ad_modal-body:hover::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+
+.travelverse-ad_modal-body:hover::-webkit-scrollbar-thumb {
+  background-color: #d6d6d6;
+}
+
+.travelverse-ad_modal-right,
+.travelverse-ad_modal-left {
+  transform: unset;
+  top: 46px;
+  height: 100vh;
+}
+
+@media only screen and (min-width: 782px) {
+
+  .travelverse-ad_modal-right,
+  .travelverse-ad_modal-left {
+    top: 32px;
+  }
+}
+
+.travelverse-ad_modal-right {
+  left: auto;
+  right: 0;
+  animation: fadeInRight 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.travelverse-ad_modal-left {
+  right: auto;
+  left: 0;
+  animation: fadeInLeft 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.admin-bar .travelverse-ad_modal {
+  max-height: calc(100vh - 32px);
+}
+
+.travelverse-modal-list {
+  list-style: initial;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.travelverse-modal-list li {
+  line-height: 1.5;
+  margin-bottom: 2em;
+}
+
+.travelverse-modal-list li:last-child {
+  margin-bottom: 0;
+}
+
+.travelverse-modal-list li i {
+  display: block;
+  line-height: 1.7;
+}
+
+.travelverse-ad {
+  margin-left: -20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(33, 24, 21, 0.8);
+}
+
+.travelverse-ad *,
+.travelverse-ad *::before,
+.travelverse-ad *::after {
+  box-sizing: border-box;
+}
+
+.travelverse-ad img,
+.travelverse-ad picture {
+  max-width: 100%;
+  display: block;
+}
+
+.travelverse-ad :is(h1, h2, h3, h4, h5, p, figure, blockquote, dl, dd) {
+  margin: 0;
+}
+
+.travelverse-ad :is(h1, h2, h3, h4, h5) {
+  color: #211815;
+}
+
+.travelverse-ad p {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  margin: 0 0 1.625em;
+}
+
+.travelverse-ad p:last-child {
+  margin-bottom: 0;
+}
+
+.travelverse-ad_container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.travelverse-ad_main-content-wrapper {
+  padding: 48px 0 120px;
+}
+
+.travelverse-ad_iframe {
+  border-radius: 4px;
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #eee;
+}
+
+.travelverse-ad_iframe-container {
+  position: relative;
+  padding-top: 55%;
+  overflow: hidden;
+}
+
+.travelverse-ad_caption {
+  margin: 16px 0 0;
+  display: block;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.travelverse-ad_icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.travelverse-ad_icon svg {
+  width: 1em;
+  height: 1em;
+}
+
+.travelverse-ad_icon-style-circle {
+  padding: 12px;
+  border-radius: 100%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(77, 77, 77, 0.1);
+  background: rgba(216, 107, 145, 0.1);
+}
+
+.travelverse-ad_link {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  color: #d86b91;
+}
+
+.travelverse-ad_link .travelverse-ad_icon {
+  margin-left: 4px;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  width: var(--icon-width);
+  height: var(--icon-height);
+}
+
+.travelverse-ad_link .travelverse-ad_icon svg {
+  width: inherit;
+  height: inherit;
+}
+
+.travelverse-ad_link:is(:hover, :active, :visited) {
+  color: #d86b91;
+}
+
+.travelverse-ad_link:is(:hover, :active, :visited) .travelverse-ad_icon {
+  transform: translateX(5px);
+}
+
+.travelverse-ad_card-upgrade .travelverse-ad_card-header {
+  padding: 40px 0 0;
+  border-bottom: none;
+}
+
+.travelverse-ad_card-upgrade .travelverse-ad_card-title {
+  flex-direction: column;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.travelverse-ad_card-upgrade .travelverse-ad_card-body {
+  text-align: center;
+}
+
+.travelverse-ad_card-upgrade .travelverse-ad_icon {
+  margin: 0 0 8px;
+  width: 56px;
+  height: 56px;
+  color: #d86b91;
+  border-radius: 50%;
+  border: 1px solid #e0e9ec;
+}
+
+.travelverse-ad_product {
+  border: 1px solid #e0e9ec;
+  box-shadow: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.travelverse-ad_product .travelverse-ad_btn {
+  width: 100%;
+}
+
+.travelverse-ad_product-title {
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 0 0 8px;
+}
+
+.travelverse-ad_product-author {
+  color: #011f27;
+  display: block;
+}
+
+.travelverse-ad_product-author by {
+  color: #3f494b;
+}
+
+.travelverse-ad_product.pro {
+  position: relative;
+}
+
+.travelverse-ad_product.pro::after {
+  content: "PRO";
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  color: #000;
+  background-color: #f2c245;
+  display: inline-block;
+  vertical-align: top;
+  width: 100px;
+  position: absolute;
+  top: 10px;
+  right: -40px;
+  text-align: center;
+  transform: rotate(45deg);
+}
+
+.travelverse-ad_product .travelverse-ad_card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.travelverse-ad_product .travelverse-ad_card-body>*:not(:last-child) {
+  flex: 1;
+}
+
+.travelverse-ad_theme .travelverse-ad_card-thumbnail {
+  position: relative;
+}
+
+.travelverse-ad_theme .travelverse-ad_card-thumbnail::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.travelverse-ad_theme .travelverse-ad_card-thumbnail .travelverse-ad_btn {
+  width: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 20px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.travelverse-ad_theme:hover .travelverse-ad_card-thumbnail::before,
+.travelverse-ad_theme:hover .travelverse-ad_card-thumbnail .travelverse-ad_btn {
+  visibility: visible;
+  opacity: 1;
+  margin-top: 0;
+}
+
+.travelverse_table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.travelverse_table-container {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 18, 15, 0.04);
+}
+
+.travelverse_table-container+* {
+  margin-top: 1.5em;
+}
+
+.travelverse_table th,
+.travelverse_table td {
+  text-align: left;
+  padding: 1.25em 1.5em;
+  border-bottom: 1px solid #e0e9ec;
+}
+
+.travelverse_table th .travelverse-ad_icon,
+.travelverse_table td .travelverse-ad_icon {
+  margin: 0 0.25em;
+}
+
+.travelverse_table tfoot {
+  border-top: 1px solid #e0e9ec;
+  font-size: 0.75em;
+}
+
+.travelverse_table tfoot td {
+  text-align: right;
+}
+
+.travelverse_table th {
+  background-color: #f4f5f5;
+  font-weight: 500;
+}
+
+.travelverse_table th:hover .travelverse-ad_icon {
+  color: #d86b91;
+}
+
+.travelverse_table tr:last-child>td {
+  border-bottom: none;
+}
+
+.travelverse_table a {
+  text-decoration: none;
+  color: rgba(33, 24, 21, 0.8);
+}
+
+.travelverse_table a:hover {
+  color: #1498e2;
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 992px) {
+  img:is(.align-right) {
+    margin: 0 0 0 auto;
+  }
+}
+
+:is(.relative) .travelverse-ad_icon {
+  position: absolute;
+  right: -12px;
+  top: -12px;
+}
+
+.usefulplugin svg.svg-travelverse {
+  margin-left: 10px;
+}
+
+:root {
+  --light--green: #2db68d;
+  --light--red: #fe7167;
+  --light--orange: #ed9a03;
+  --g-secondary-color: #ffffff;
+}
+
+.travelverse-ad_modal {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.travelverse-ad_modal .travelverse--versions {
+  display: flex;
+  align-items: center;
+  margin: 0 0 16px;
+  gap: 20px;
+}
+
+.travelverse-ad_modal .travelverse--versions .released-date {
+  position: relative;
+}
+
+.travelverse-ad_modal .travelverse--versions .released-date::before {
+  position: absolute;
+  content: "â€“";
+  font-weight: 500;
+  top: 50%;
+  left: -15px;
+  transform: translateY(-50%);
+}
+
+.travelverse-ad_modal .version--title h5 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.travelverse-ad_modal .main--details+.main--details {
+  padding-block-start: 32px;
+}
+
+.travelverse-ad_modal .main--details:not(:last-child) {
+  padding-block-end: 32px;
+  border-bottom: 1px solid rgba(77, 77, 77, 0.1);
+}
+
+.travelverse-ad_modal .logs,
+.travelverse-ad_modal .text-wrap {
+  margin: 0;
+}
+
+.travelverse-ad_modal .logs li,
+.travelverse-ad_modal .text-wrap li {
+  display: flex;
+  align-items: flex-start;
+  max-width: 700px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0.007em;
+  color: var(--color--light--black);
+  margin: 0;
+}
+
+.travelverse-ad_modal .logs li+li,
+.travelverse-ad_modal .text-wrap li+li {
+  margin: 8px 0 0;
+}
+
+.travelverse-ad_modal .logs span,
+.travelverse-ad_modal .text-wrap span {
+  margin-right: 6px;
+  flex: 0 0 18px;
+}
+
+.travelverse-ad_modal .logs .light--orange,
+.travelverse-ad_modal .text-wrap .light--orange {
+  background-color: var(--light--orange);
+}
+
+.travelverse-ad_modal .logs .letter,
+.travelverse-ad_modal .text-wrap .letter {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+  width: 18px;
+  height: 18px;
+  color: var(--g-secondary-color);
+  line-height: 1.7;
+  margin-top: 4px;
+}
+
+.travelverse-ad_modal .logs .light--red,
+.travelverse-ad_modal .text-wrap .light--red {
+  background-color: var(--light--red);
+}
+
+.travelverse-ad_modal .logs .light--green,
+.travelverse-ad_modal .text-wrap .light--green {
+  background-color: var(--light--green);
+}
+
+.travelverse-ad_modal .logs:is(.flex) {
+  display: flex;
+  gap: 14px;
+  padding-block: 16px;
+  padding-inline: 32px;
+  justify-content: flex-end;
+}
+
+.travelverse-ad_header {
+  padding-block: 26px;
+  background-color: #fff;
+}
+
+.travelverse-ad_header-brand {
+  max-width: 180px;
+}
+
+.travelverse-ad_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.travelverse-ad_header-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.travelverse-ad_header-right div+div:is(.travelverse-ad_icon-link-group) {
+  position: relative;
+}
+
+.travelverse-ad_header-right div+div:is(.travelverse-ad_icon-link-group)::before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 2px;
+  border-radius: 100px;
+  background-color: rgba(77, 77, 77, 0.1);
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.travelverse-ad .relative {
+  position: relative;
+}
+
+.travelverse-ad .height-full {
+  height: 100%;
+}
+
+.travelverse-ad .m-bottom-md {
+  margin-block-end: 48px;
+}
+
+.travelverse-ad .m-bottom-sm {
+  margin-block-end: 30px;
+}
+
+.travelverse-ad .text-center {
+  text-align: center;
+}
+
+.travelverse-ad .flex {
+  display: flex;
+}
+
+.travelverse-ad .has-border-radius {
+  border-radius: 10px;
+}
+
+.travelverse-ad .fs-14 {
+  font-size: 0.875em;
+  line-height: 1.571;
+}
+
+.travelverse-ad .fs-18 {
+  font-size: 1.125em;
+  line-height: 1.111;
+}
+
+.travelverse-ad .fs-20 {
+  font-size: 1.25em;
+  line-height: 1.4;
+}
+
+.travelverse-ad .fw-500 {
+  font-weight: 500;
+}
+
+.travelverse-ad .fw-600 {
+  font-weight: 600;
+}
+
+.travelverse-ad .has-bg-white {
+  background-color: #fff;
+}
+
+.travelverse-ad .has-bg-primary-accent {
+  background-color: rgba(216, 107, 145, 0.05);
+}
+
+.travelverse-ad .has-border {
+  border: 1px solid rgba(77, 77, 77, 0.1);
+}
+
+.travelverse-ad .p-16 {
+  padding: 16px;
+}
+
+.travelverse-ad .p-20 {
+  padding: 20px;
+}
+
+.travelverse-ad .img-full-width {
+  width: 100%;
+}
+
+.travelverse-ad .align-bottom {
+  margin: auto 0 0 0;
+}
