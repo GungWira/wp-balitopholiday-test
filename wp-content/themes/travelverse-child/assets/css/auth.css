@@ -2,6 +2,8 @@
   display: flex;
   min-height: 100vh;
   font-family: "Inter", sans-serif;
+  margin: 0 !important;
+  max-width: unset !important;
 }
 
 /* Left Side - Image */
@@ -229,68 +231,68 @@ input[type="checkbox"] {
 
 /* Responsive */
 @media (max-width: 968px) {
-  .container {
+  .auth-container {
     flex-direction: column;
   }
 
-  .left-side {
+  .auth-left {
     min-height: 300px;
     max-height: 300px;
   }
 
-  .logo {
+  .auth-logo {
     top: 30px;
     left: 30px;
   }
 
-  .logo-icon {
+  .auth-logo .logo-icon {
     width: 48px;
     height: 48px;
   }
 
-  .logo-icon svg {
+  .auth-logo .logo-icon svg {
     width: 28px;
     height: 28px;
   }
 
-  .logo-text {
+  .auth-logo .logo-text {
     font-size: 11px;
   }
 
-  .right-side {
+  .auth-right {
     padding: 40px 24px;
   }
 
-  h1 {
+  .auth-right h1 {
     font-size: 36px;
   }
 
-  .subtitle {
+  .auth-right .subtitle {
     font-size: 15px;
     margin-bottom: 32px;
   }
 }
 
 @media (max-width: 480px) {
-  .left-side {
+  .auth-left {
     min-height: 250px;
     max-height: 250px;
   }
 
-  .logo {
+  .auth-logo {
     top: 24px;
     left: 24px;
   }
 
-  .right-side {
+  .auth-right {
     padding: 32px 20px;
   }
 
-  h1 {
+  .auth-right h1 {
     font-size: 32px;
   }
 
-  .subtitle {
+  .auth-right .subtitle {
     font-size: 14px;
   }
 
@@ -300,7 +302,7 @@ input[type="checkbox"] {
     font-size: 14px;
   }
 
-  .submit-btn {
+  .auth-right .submit-btn {
     padding: 14px;
     font-size: 15px;
   }
