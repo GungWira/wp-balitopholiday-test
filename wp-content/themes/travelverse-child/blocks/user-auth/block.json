@@ -1,0 +1,11 @@
+{
+  "apiVersion": 2,
+  "name": "travelverse-child/user-auth",
+  "title": "User Auth Button",
+  "category": "theme",
+  "description": "Login / Avatar button based on user state",
+  "supports": {
+    "html": false
+  },
+  "render": "file:./render.php"
+}
