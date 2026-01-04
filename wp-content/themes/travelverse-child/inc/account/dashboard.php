@@ -8,6 +8,7 @@ $user = wp_get_current_user();
     <li><a href="?tab=bookings">My Trips</a></li>
     <li><a href="?tab=profile">Profile</a></li>
     <li><a href="<?php echo wp_logout_url(home_url()); ?>">Logout</a></li>
+    <?php echo 'Points: ' . btp_get_user_points(); ?>
 </ul>
 
 <div class="tv-account-content">
