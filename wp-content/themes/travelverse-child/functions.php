@@ -36,15 +36,30 @@ add_action('user_register', function ($user_id) {
     }
 });
 
-// add_action('init', function () {
-//     if (!current_user_can('administrator')) return;
+add_action( 'init', function () {
 
-//     $users = get_users([
-//         'meta_key' => 'btp_points',
-//         'meta_compare' => 'NOT EXISTS'
-//     ]);
+	register_block_pattern(
+		'travelverse-child/test-text',
+		array(
+			'title'       => __( 'Test Text Pattern', 'travelverse-child' ),
+			'description' => __( 'Pattern test sederhana dari child theme.', 'travelverse-child' ),
+			'categories'  => array( 'text' ),
+			'content'     => file_get_contents(
+				get_stylesheet_directory() . '/patterns/test-text.html'
+			),
+		)
+	);
 
-//     foreach ($users as $user) {
-//         add_user_meta($user->ID, 'btp_points', 0, true);
-//     }
-// });
+});
+
+add_action('wp_enqueue_scripts', 'travelverse_child_enqueue_trip_card_css');
+function travelverse_child_enqueue_trip_card_css() {
+
+    wp_enqueue_style(
+        'travelverse-child-trip-card',
+        get_stylesheet_directory_uri() . '/assets/css/trip-card.css',
+        array(),             
+        wp_get_theme()->get('Version')
+    );
+
+}
